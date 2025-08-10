@@ -8,10 +8,14 @@ package dev.lpa;
 //user information will be stored to a .txt file and removed as needed
 
 
+import java.util.ArrayList;
+import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
         UI ui = new UI();
+        Account account = new Account("Robert Melena", 25, "01/06/2000","423-32-4232",335);
+        System.out.println(account);
         ui.begin();
     }
 

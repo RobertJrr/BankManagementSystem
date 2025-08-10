@@ -24,7 +24,7 @@ public class UI {
             scanner.nextLine();
 //            Create Account
             if(option == 3){
-                makePerson();
+                makeAccount();
             }
         }while(option != 5);
 
@@ -32,9 +32,10 @@ public class UI {
 
 
     //create person prompt
-    private void makePerson(){
-        Person person;
+    private void makeAccount(){
+        Account account;
 
+//        Try to put this in separate function maybe
         System.out.println("\n\n----Enter person information, this will be used to create an account----");
         System.out.print("Name: ");
         String name = scanner.nextLine();
@@ -46,13 +47,16 @@ public class UI {
         String DOB = scanner.nextLine();
         System.out.print("Social Security: ");
         String socialSec = scanner.nextLine();
+        System.out.print("Initial Deposit: ");
+        int initialDeposit = scanner.nextInt();
+        scanner.nextLine();
 
 //        waiting 3 seconds then attempt to create Person
         //maybe put this in method (LEFT OFF HERE)
         try{
             System.out.println("Creating person...");
             Thread.sleep(3000);
-            person = new Person(name,age,DOB,socialSec);
+            account = new Account(name,age,DOB,socialSec,0);
             System.out.println("Returning to main page...");
             Thread.sleep(2000);
         }catch (InterruptedException e){
@@ -77,7 +81,7 @@ public class UI {
         File file = new File("bankinfo2.txt");
         try{
             if(file.createNewFile()){
-                System.out.println("File created");
+                System.out.println("File created: " + file.getName());
             }else{
                 System.out.println("File exists: Using " + file.getName());
             }
