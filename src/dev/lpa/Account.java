@@ -22,7 +22,7 @@ public class Account {
             this.name = name;
             this.age = age;
             generateAccountAndRoutingNumber();
-            System.out.println("Person information is valid. Thank you!");
+            System.out.println("Account created for " + this.name);
         } else{
             System.out.println("Invalid information, cannot create");
         }
@@ -41,6 +41,7 @@ public class Account {
     }
 
     private void generateAccountAndRoutingNumber(){
+        //prefixes for account and routing number
         String routingNum = "32222";
         String accountNum = "7171";
         //random num for routing number

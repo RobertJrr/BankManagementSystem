@@ -13,13 +13,14 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
-        UI ui = new UI();
         Account account = new Account("Robert Melena", 25, "01/06/2000","423-32-4232",335);
-        System.out.println(account);
+        Account account2 = new Account("Esme Valencia", 25, "06/09/2000","331-33-3431",370);
+        Account account3 = new Account("Joseph Melena", 22, "04/02/2002","903-57-1193",450);
+        Account account4 = new Account("Isaac Melena", 17, "09/18/2007","343-77-9001",500);
+        Account account5 = new Account("Serina Melena", 28, "06/13/1997","334-98-1001",600);
+        UI ui = new UI();
         ui.begin();
     }
-
-
 }
 
 
