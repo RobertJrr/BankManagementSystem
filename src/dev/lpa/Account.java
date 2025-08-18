@@ -21,11 +21,23 @@ public class Account {
             this.socialSec = socialSec;
             this.name = name;
             this.age = age;
+            this.balance = initialDeposit;
             generateAccountAndRoutingNumber();
             System.out.println("Account created for " + this.name);
         } else{
             System.out.println("Invalid information, cannot create");
         }
+    }
+
+    public String getSocialSec(){
+        return this.socialSec;
+    }
+    public double getBalance(){
+        return this.balance;
+    }
+
+    public void setBalance(double newBalance){
+        this.balance = newBalance;
     }
 
     private static boolean validDOB(String DOB){
@@ -57,10 +69,16 @@ public class Account {
 
     @Override
     public String toString(){
-        return ("Name: %-20s" + "Age: %-10d" + "DOB: %-20s"
-                + "Social Security: %-20s" + "Routing Number: %-20d" + "Account Number: %-20d")
-                .formatted(name,age,DOB,socialSec,routingNumber,accountNumber);
+        return ("Name: %-20s" + "Balance: %-20f")
+                .formatted(name,balance);
     }
+
+//    @Override
+//    public String toString(){
+//        return ("Name: %-20s" + "Age: %-10d" + "DOB: %-20s"
+//                + "Social Security: %-20s" + "Routing Number: %-20d" + "Account Number: %-20d")
+//                .formatted(name,age,DOB,socialSec,routingNumber,accountNumber);
+//    }
 
 
 }

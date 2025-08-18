@@ -25,38 +25,21 @@ public class UI {
             scanner.nextLine();
 //            Create Account
             if(option == 1){
-
+                chase.accessAccount();
             }else if(option == 2){
-
-            }else if(option == 3){
                 chase.addNewAccount();
-            }else if(option == 4){
-
-            }else if(option == 5){
-
+            }else if(option == 3){
             }
-        }while(option != 5);
+        }while(option != 4);
 
     }
 
-    //need to create another option for this
-    private static void getAccount(){
-        printTitle();
-        System.out.println("Enter social to access your account...");
-    }
-
-    private static void printTitle(){
-        String dashes = "-".repeat(10);
-        System.out.println(dashes + "Chase Bank" + dashes);
-    }
-
-    private static void displayChoices(){
-        printTitle();
-        System.out.println("1.Deposit");
-        System.out.println("2.Withdraw");
-        System.out.println("3.Create New Account");
-        System.out.println("4.Delete Account");
-        System.out.println("5. Exit");
+    private  void displayChoices(){
+        chase.printTitle();
+        System.out.println("1.Access Account");
+        System.out.println("2.Create New Account");
+        System.out.println("3.Delete Account");
+        System.out.println("4. Exit");
         System.out.print("Enter choice --> ");
     }
 
