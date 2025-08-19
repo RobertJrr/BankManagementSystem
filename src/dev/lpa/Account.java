@@ -40,18 +40,22 @@ public class Account {
         this.balance = newBalance;
     }
 
+
+    //validate birthday  format
     private static boolean validDOB(String DOB){
         Pattern pattern = Pattern.compile("[0-9]{2}/[0-9]{2}/[0-9]{4}");
         Matcher matcher = pattern.matcher(DOB);
         return matcher.matches();
     }
 
+    //validate social security format
     private static boolean validSocialSec(String socialSec){
         Pattern pattern = Pattern.compile("[0-9]{3}-[0-9]{2}-[0-9]{4}");
         Matcher matcher = pattern.matcher(socialSec);
         return matcher.matches();
     }
 
+    //generate Account and Routing number for user
     private void generateAccountAndRoutingNumber(){
         //prefixes for account and routing number
         String routingNum = "32222";

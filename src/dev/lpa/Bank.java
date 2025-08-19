@@ -95,7 +95,6 @@ public class Bank {
 
 //    Create and add new Account by asking user for information
     public void addNewAccount(){
-
         //wait 3 seconds before creating account
         waitFewSeconds();
         Account account = createAccount();
@@ -109,7 +108,6 @@ public class Bank {
 
     //overloaded method to add account (for testing)
     public void addNewAccount(Account account){
-
         //wait 3 seconds before creating account
         waitFewSeconds();
         //add account
@@ -164,10 +162,12 @@ public class Bank {
 
     }
 
+    //print title of bank
     public void printTitle(){
         String dashes = "-".repeat(10);
         System.out.println(dashes + "Chase Bank" + dashes);
     }
+    //wait few seconds before executing
     private void waitFewSeconds(){
         try{
             Thread.sleep(1500);
