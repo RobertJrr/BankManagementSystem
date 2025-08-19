@@ -1,10 +1,8 @@
 package dev.lpa;
 
 import java.io.File;
-import java.io.InterruptedIOException;
 import java.util.Scanner;
-import java.util.Timer;
-import java.util.TimerTask;
+
 
 public class UI {
     Bank chase;
@@ -46,7 +44,7 @@ public class UI {
 
     //create a file to store users data(practice for jdbc)
     private static void createFile(){
-        File file = new File("bankinfo2.txt");
+        File file = new File("bankinfo.txt");
         try{
             if(file.createNewFile()){
                 System.out.println("File created: " + file.getName());

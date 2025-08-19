@@ -24,10 +24,6 @@ public class Main {
         bank.printAllAccounts();
         bank.deleteAccount();
         bank.printAllAccounts();
-
-
-
-
     }
 }
 

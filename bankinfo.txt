@@ -1,0 +1,5 @@
+java.io.FileWriter@33c7353a
+Name: Isaac               Balance: $1000.00Name: Robert              Balance: $1000.00Name: Esme                Balance: $1000.00Name: Jojo                Balance: $1000.00Name: Isaac               Balance: $1000.00Name: Robert              Balance: $1000.00
+Name: Esme                Balance: $1000.00
+Name: Jojo                Balance: $1000.00
+Name: Isaac               Balance: $1000.00

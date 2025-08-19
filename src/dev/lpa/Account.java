@@ -67,8 +67,6 @@ public class Account {
         this.accountNumber = Long.parseLong(accountNum);
     }
 
-
-
     @Override
     public String toString(){
         return ("Name: %-20s" + "Balance: $%.2f")

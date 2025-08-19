@@ -1,5 +1,8 @@
 package dev.lpa;
 
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -9,18 +12,21 @@ import java.util.Scanner;
 public class Bank {
     private List<Account> accounts;
     private final Scanner scanner = new Scanner(System.in);
-
+    private final Scanner fileScanner = new Scanner("bankinfo.txt");
 
     public Bank(){
         this.accounts = new ArrayList<>();
+
     }
 
+//    print all accounts
     public void printAllAccounts(){
         for(Account account : accounts){
             System.out.println("[" + account + "]");
         }
     }
 
+//    Delete account via social sec
     public void deleteAccount(){
         System.out.println("----Enter your social to DELETE your account----");
         Account account = getAccount();
@@ -45,6 +51,7 @@ public class Bank {
 
     }
 
+//    get Account via social security number
     private Account getAccount(){
         String social = scanner.nextLine();
         for(Account account : accounts){
@@ -69,15 +76,16 @@ public class Bank {
         }while(option != 3);
         System.out.println("Logging out of account...Goodbye");
         waitFewSeconds();
-
     }
 
+//    withdraw into account
     private void withdraw(Account account){
         System.out.println("Withdraw amount: ");
         double withdraw = scanner.nextDouble();
         scanner.nextLine(); //consume new line
         account.setBalance((account.getBalance() - withdraw));
     }
+//    deposit into account
     private void deposit(Account account){
         System.out.println("Deposit amount: ");
         double deposit = scanner.nextDouble();
@@ -85,6 +93,7 @@ public class Bank {
         account.setBalance((account.getBalance() + deposit));
     }
 
+//    Create and add new Account by asking user for information
     public void addNewAccount(){
 
         //wait 3 seconds before creating account
@@ -92,6 +101,7 @@ public class Bank {
         Account account = createAccount();
         //add account
         this.accounts.add(account);
+        storeToFile(account);
         System.out.println("Returning to main page...");
         //wait 2 seconds before returning to options menu
         waitFewSeconds();
@@ -104,12 +114,14 @@ public class Bank {
         waitFewSeconds();
         //add account
         this.accounts.add(account);
+        storeToFile(account);
         System.out.println("Returning to main page...");
         //wait 2 seconds before returning to options menu
         waitFewSeconds();
     }
 
 
+    //display options
     private int displayOptions(){
         System.out.println("1. Withdraw");
         System.out.println("2. Deposit");
@@ -120,6 +132,7 @@ public class Bank {
         return option;
     }
 
+    //Get information to create Account
     private Account createAccount(){
         // Try to put this in separate function maybe
         System.out.println("\n\n----Enter personal info----");
@@ -137,6 +150,18 @@ public class Bank {
         int initialDeposit = scanner.nextInt();
         scanner.nextLine();
         return new Account(name,age,DOB,socialSec,initialDeposit);
+    }
+
+
+    //write to file when account is added
+    private void storeToFile(Account account){
+        try(FileWriter fileWriter = new FileWriter(("bankinfo.txt"),true)){
+
+            fileWriter.write(account.toString() + "\n");
+        }catch (IOException e){
+           System.out.println(e.getMessage());
+        }
+
     }
 
     public void printTitle(){
