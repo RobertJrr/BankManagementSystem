@@ -14,9 +14,26 @@ public class Bank {
     public Bank(){
         this.accounts = new ArrayList<>();
     }
+
+    public void printAllAccounts(){
+        for(Account account : accounts){
+            System.out.println("[" + account + "]");
+        }
+    }
+
+    public void deleteAccount(){
+        System.out.println("----Enter your social to DELETE your account----");
+        Account account = getAccount();
+        if(account == null){
+            System.out.println("Account does not exist!");
+            return;
+        }
+        accounts.remove(account);
+    }
+
     //method to access user's account and withdraw and update
     public void accessAccount(){
-        System.out.println("----Enter your social to access your account----");
+        System.out.println("----Enter your social to ACCESS your account----");
         Account account = getAccount();
         if(account == null){
             System.out.println("Account does not exist!");
@@ -78,7 +95,18 @@ public class Bank {
         System.out.println("Returning to main page...");
         //wait 2 seconds before returning to options menu
         waitFewSeconds();
+    }
 
+    //overloaded method to add account (for testing)
+    public void addNewAccount(Account account){
+
+        //wait 3 seconds before creating account
+        waitFewSeconds();
+        //add account
+        this.accounts.add(account);
+        System.out.println("Returning to main page...");
+        //wait 2 seconds before returning to options menu
+        waitFewSeconds();
     }
 
 

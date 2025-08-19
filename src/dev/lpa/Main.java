@@ -13,8 +13,21 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
-        UI ui = new UI();
-        ui.begin();
+//        UI ui = new UI();
+//        ui.begin();
+
+        Bank bank = new Bank();
+        bank.addNewAccount(new Account("Robert",25,"01/06/2000","123-45-6789",1000));
+        bank.addNewAccount(new Account("Esme",25,"01/06/2000","123-45-6719",1000));
+        bank.addNewAccount(new Account("Jojo",25,"01/06/2000","123-45-6129",1000));
+        bank.addNewAccount(new Account("Isaac",25,"01/06/2000","123-45-6189",1000));
+        bank.printAllAccounts();
+        bank.deleteAccount();
+        bank.printAllAccounts();
+
+
+
+
     }
 }
 

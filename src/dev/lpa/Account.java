@@ -67,11 +67,27 @@ public class Account {
         this.accountNumber = Long.parseLong(accountNum);
     }
 
+
+
     @Override
     public String toString(){
-        return ("Name: %-20s" + "Balance: %-20f")
+        return ("Name: %-20s" + "Balance: $%.2f")
                 .formatted(name,balance);
     }
+
+    //    @Override - already getting same reference in delete account so may not need this for now
+//    public boolean equals(Object obj){
+//        if(obj == null){
+//            return false;
+//        }
+//        if(obj.getClass() != this.getClass()){
+//            return false;
+//        }
+//        final Account other = (Account) obj;
+//
+////        only comparing social security because no one should have the same social security number
+//        return this.socialSec.equals(other.getSocialSec());
+//    }
 
 //    @Override
 //    public String toString(){

@@ -29,6 +29,7 @@ public class UI {
             }else if(option == 2){
                 chase.addNewAccount();
             }else if(option == 3){
+                chase.deleteAccount();
             }
         }while(option != 4);
 
